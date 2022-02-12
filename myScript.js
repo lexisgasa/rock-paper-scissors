@@ -5,7 +5,11 @@ function gameStart () {
         userChoice = 1;
     } else if (userChoice === "paper") {
         userChoice = 2;
-    } else { userChoice = 3};
+    } else if (userChoice === "scissors") {
+        userChoice = 3;
+    } else { console.log("Invalid choice");
+        return; 
+    }
 
 
 
@@ -22,7 +26,7 @@ function gameStart () {
 
 function computerPlay () {
     let randomNumber = Math.floor(Math.random() * 3) +1;
-    return(randomNumber);
+    return randomNumber;
 }
 
 /*
