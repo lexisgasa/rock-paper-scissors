@@ -12,31 +12,29 @@ function gameStart () {
         return; 
     }
 
+   
+    let randomNumber = Math.floor((Math.random() * 3) +1);
+        if (randomNumber === 1) {
+            randomNumberValue = "Rock";
+        }
+        else if (randomNumber === 2) {
+            randomNumberValue = "Paper";
+        }
+        else { randomNumberValue = "Scissors"
+        }
 
-    let computerChoice = computerPlay();
 
-
-    if (userChoice === 1 && computerChoice === 3 || userChoice === 2 && computerChoice === 1 || userChoice === 3 && computerChoice === 2 ) {
-        return ("You win! " + userChoiceValue + " beats " + randomNumberValue);
-    } else if (userChoice === 1 && computerChoice === 1 || userChoice === 2 && computerChoice === 2 || userChoice === 3 && computerChoice === 3 ) {
+    if (userChoiceValue === 1 && randomNumber === 3 || userChoiceValue === 2 && randomNumber === 1 || userChoiceValue === 3 && randomNumber === 2 ) {
+        return ("You win! " + userChoice + " beats " + randomNumberValue);
+    } else if (userChoiceValue === 1 && randomNumber === 1 || userChoiceValue === 2 && randomNumber === 2 || userChoiceValue === 3 && randomNumber === 3 ) {
         return "Draw!";
-    } else { return ("You lose! " + userChoiceValue + " is destroyed by " + randomNumberValue)};
-}
+    } else { return ("You lose! " + userChoice + " is destroyed by " + randomNumberValue)};
+    }
 
 
-function computerPlay () {
-    let randomNumber = Math.floor(Math.random() * 3) +1;
-    let randomNumberValue;
-    if (randomNumber === 1 ) {
-        randomNumberValue = "Rock";
-    }
-    else if (randomNumber === 2) {
-        randomNumberValue = "Paper";
-    } else {
-        randomNumberValue = "Scissors";
-    }
-    return randomNumber;
-}
+ 
+        
+
 
 /*
 1 = ROCK
