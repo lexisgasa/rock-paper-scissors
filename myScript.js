@@ -11,7 +11,7 @@ function gameStart () {
     } else { console.log("Invalid choice");
         return; 
     }
-
+    userChoice = userChoice.charAt(0) .toUpperCase() + userChoice.slice(1).toLowerCase();
    
     let randomNumber = Math.floor((Math.random() * 3) +1);
         if (randomNumber === 1) {
@@ -33,7 +33,6 @@ function gameStart () {
 
 
  
-        
 
 
 /*
