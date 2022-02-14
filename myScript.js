@@ -1,12 +1,13 @@
 
 function game() {
 
+    /* Variables starting from 0 everytime a round is played */
     let userWin = 0;
     let userLose = 0;
     let draw = 0;
 
     for (let i = 0; i < 5; i++){
-
+        /* User choice in letters and numbers */
         let userChoice = prompt("Choose your option; Rock, paper or scissors;").toLowerCase();
         let userChoiceValue;
         if (userChoice === "rock") {
@@ -18,9 +19,10 @@ function game() {
         } else { console.log("Invalid choice");
             return; 
         }
-        
+        /* Capitalized user choice */
         userChoice = userChoice.charAt(0) .toUpperCase() + userChoice.slice(1).toLowerCase();
-    
+
+        /* computerPlay function */
         let randomNumber = Math.floor((Math.random() * 3) +1);
         if (randomNumber === 1) {
             randomNumberValue = "Rock";
@@ -31,6 +33,7 @@ function game() {
         else { randomNumberValue = "Scissors"
         }
 
+        /* Logical comp. to stablish win/lose/draw */
         if (userChoiceValue === 1 && randomNumber === 3 || userChoiceValue === 2 && randomNumber === 1 || userChoiceValue === 3 && randomNumber === 2 ) {
             userWin++;
             console.log("You win! " + userChoice + " beats " + randomNumberValue);
@@ -43,6 +46,7 @@ function game() {
         }
     }
 
+    /* Final result */
     if (userWin > userLose && draw) {
         return `You win the game, you won ${userWin}, lost ${userLose}, and draw ${draw} games!`;
     }
